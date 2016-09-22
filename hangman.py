@@ -68,13 +68,13 @@ def main():
 
     if word_dash == word:
         print "Congratulations, you got the word '{0}'!".format(word)
-        inp = raw_input("Play again?[y]")
+        inp = raw_input("Play again?[y]: ")
         if inp == 'y':
             main()
     else:
         print "Wrong letter, you died!"
         print "The word was '{0}'. Better luck next time!".format(word)
-        inp = raw_input("Play again?[y]")
+        inp = raw_input("Play again?[y]: ")
         if inp == 'y':
             main()
 
