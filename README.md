@@ -6,7 +6,7 @@ This is a command line version of the popular [Hangman](https://en.wikipedia.org
 
 <h2><b>Requirements</b></h2>
 
-Python version 2.6+
+Python version 2.7.6+
 
 <h2><b>Usage</b></h2>
 
