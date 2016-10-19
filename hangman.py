@@ -11,19 +11,14 @@ def getword(rand_num):
 
 def replacer(word,word_dash,l):
     dash_list = list(word_dash)
-    ind = 0
-    first_ind = True
-    cond = True
-    while cond:
-        if first_ind:
-            ind = word.find(l)
-            dash_list[ind] = l
-            first_ind = False
-        else:
-            ind = word.find(l,ind+1)
-            if ind == -1:
-                break
-            dash_list[ind] = l
+    ind = word.find(l)
+    dash_list[ind] = l
+
+    while True:
+        ind = word.find(l,ind+1)
+        if ind == -1:
+            break
+        dash_list[ind] = l
 
     word_dash = ''.join(dash_list)
     return word_dash
