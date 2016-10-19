@@ -9,11 +9,6 @@ def getword(rand_num):
             else:
                 return line.strip('\n')
 
-def noose(hn):
-    stage = {1:"Wrong letter, 4 chances left!",2:"Wrong letter, 3 chances left!",\
-    3:"Wrong letter, 2 chances left!",4:"Wrong letter, 1 chance left!"}
-    print stage[hn]
-
 def replacer(word,word_dash,l):
     dash_list = list(word_dash)
     ind = 0
@@ -43,7 +38,7 @@ def main():
     rand_num = randrange(1,linecount + 1)
 
     word = getword(rand_num)
-    hangnum = 0
+    hangnum = 5
     length = len(word)
     word_dash = '_' * length
     tried_letters = set()
@@ -60,11 +55,11 @@ def main():
             word_dash = replacer(word,word_dash,l)
         else:
             tried_letters.update(l)
-            hangnum += 1
-            if hangnum == 5:
+            hangnum -= 1
+            if hangnum == 0:
                 break
             else:
-                noose(hangnum)
+                print "Wrong letter, {0} chance(s) left!".format(hangnum)
 
     if word_dash == word:
         print "Congratulations, you got the word '{0}'!".format(word)
